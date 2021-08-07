@@ -93,7 +93,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
 
             if (SceneManager.GetActiveScene().name == m_titleScene)
             {
-                PlayBgmByName("Title");
+                //PlayBgmByName("");
             }
             else if (SceneManager.GetActiveScene().name == m_mainScene)
             {
@@ -116,7 +116,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         switch (SceneManager.GetActiveScene().name)
         {
             case "Title":
-                PlayBgmByName("Title");
+                //PlayBgmByName("Title");
                 break;
             case "Main":
                 PlayBgmByName("");

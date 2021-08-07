@@ -4,21 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// ボタンを押した時の機能を持つクラス
+/// ボタンを押した時スライダーを操作した時の機能を持つクラス
 /// </summary>
 public class UIManager : MonoBehaviour
 {
     Slider m_masterSlider;
     Slider m_bgmSlider;
     Slider m_seSlider;
-    Slider m_voiceSlider;
+    //Slider m_voiceSlider;
 
     void Awake()
     {
         m_masterSlider = GameObject.FindGameObjectWithTag("Master").GetComponent<Slider>();
         m_bgmSlider = GameObject.FindGameObjectWithTag("BGM").GetComponent<Slider>();
         m_seSlider = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>();
-        m_voiceSlider = GameObject.FindGameObjectWithTag("VOICE").GetComponent<Slider>();
+        //m_voiceSlider = GameObject.FindGameObjectWithTag("VOICE").GetComponent<Slider>();
 
         if (m_masterSlider) 
         { 
@@ -35,11 +35,11 @@ public class UIManager : MonoBehaviour
             m_seSlider.value = SoundManager.Instance.GetSeVolume; 
             Debug.Log("SE音量：" + m_seSlider.value); 
         }
-        if (m_voiceSlider) 
-        { 
-            m_voiceSlider.value = SoundManager.Instance.GetVoiceVolume; 
-            Debug.Log("ボイス音量：" + m_voiceSlider.value); 
-        }
+        //if (m_voiceSlider) 
+        //{ 
+        //    m_voiceSlider.value = SoundManager.Instance.GetVoiceVolume; 
+        //    Debug.Log("ボイス音量：" + m_voiceSlider.value); 
+        //}
     }
 
     /// <summary>
@@ -82,8 +82,8 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// ボイス音量を設定する
     /// </summary>
-    public void SetVoiceVolume()
-    {
-        SoundManager.Instance.VoiceVolChange(m_voiceSlider.value);
-    }
+    //public void SetVoiceVolume()
+    //{
+    //    SoundManager.Instance.VoiceVolChange(m_voiceSlider.value);
+    //}
 }
