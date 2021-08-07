@@ -32,17 +32,19 @@ public class Bomb : MonoBehaviour
                 Instantiate(bullet, bulletP, Quaternion.FromToRotation(Vector3.forward, vec));
             }
         }
+
+        Destroy(this.gameObject);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("bullet"))
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //    else if (other.CompareTag("Player"))
-    //    {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Explosion();
+        }
+        else if (other.CompareTag("Player"))
+        {
 
-    //    }
-    //}
+        }
+    }
 }
