@@ -14,14 +14,22 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField] string m_mainScene = "Main";
     [Header("リザルト画面のシーン名")]
     [SerializeField] string m_reslutScene = "Result";
-    [Header("ゲームの状態")]
-    [SerializeField] bool m_inGame = false;
 
-    public bool InGame { get => m_inGame; }
+    [Header("デバッグ用")]
+    [SerializeField] bool m_player1Win = false;
+    [SerializeField] bool m_player2Win = false;
+    [SerializeField] bool m_drawGame = false;
+
+    public bool InGame { get; set; }
+
+    public bool Player1Win { get => m_player1Win; }
+    public bool Player2Win { get => m_player2Win; }
+    public bool DrawGame { get => m_drawGame; }
+
 
     private void Awake()
     {
-        if (Instance!= null)
+        if (this != Instance)
         {
             Destroy(gameObject);
             return;
@@ -37,11 +45,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         if (SceneManager.GetActiveScene().name == "Title")
         {
-
+            InGame = false;
         }
         else if (SceneManager.GetActiveScene().name == "Main")
         {
-
         }
         else if (SceneManager.GetActiveScene().name == "Result")
         {
@@ -67,5 +74,39 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             default:
                 break;
         }
+    }
+
+    private void Update()
+    {
+        if (InGame)
+        {
+            //if (player1.hp <= 0)
+            //{
+            //    m_player2Win = true;
+            //    InGame = false;
+            //}
+            //else if (player2.hp <= 0)
+            //{
+            //    m_player1Win = true;
+            //    InGame = false;
+            //}
+            //else
+            //{
+            //    m_draw = true;
+            //    InGame = false;
+            //}
+        }
+    }
+
+    public void GameDebug()
+    {
+        InGame = false;
+    }
+
+    public void ResetFlag()
+    {
+        m_player1Win = false;
+        m_player2Win = false;
+        m_drawGame = false;
     }
 }
