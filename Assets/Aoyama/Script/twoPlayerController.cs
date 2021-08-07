@@ -15,11 +15,11 @@ public class twoPlayerController : MonoBehaviour
 
     void Update()
     {
-        float hLeft = Input.GetAxisRaw("Horizontal");
-        float vLeft = Input.GetAxisRaw("Vertical");
+        float hLeft = Input.GetAxisRaw("Horizontal2");
+        float vLeft = Input.GetAxisRaw("Vertical2");
         m_inputDirection = new Vector3(hLeft, 0, vLeft).normalized;
-        float hRight = Input.GetAxisRaw("HorizontalRight");
-        float vRight = Input.GetAxisRaw("VerticalRight");
+        float hRight = Input.GetAxisRaw("Horizontal2Right");
+        float vRight = Input.GetAxisRaw("Vertical2Right");
         m_rotate = new Vector3(hRight, 0, vRight).normalized;
     }
 
