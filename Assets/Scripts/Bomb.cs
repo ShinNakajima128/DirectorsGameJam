@@ -27,8 +27,8 @@ public class Bomb : MonoBehaviour
                 {
                     continue;
                 }
-                Vector3 vec = new Vector3(x, z, 0);
-                Vector3 bulletP = transform.position + new Vector3(x, z, 0);
+                Vector3 vec = new Vector3(x, 0, z);
+                Vector3 bulletP = transform.position + new Vector3(x, 0, z);
                 Instantiate(bullet, bulletP, Quaternion.FromToRotation(Vector3.forward, vec));
             }
         }
