@@ -7,6 +7,7 @@ public class MatchManager : MonoBehaviour
 {
     [SerializeField] Text m_countText = default;
     [SerializeField] Text m_finishText = default;
+    [SerializeField] Button m_selectButton = default;
     [SerializeField] GameObject m_finishPanel = default;
 
     bool isFinished = true;
@@ -99,5 +100,6 @@ public class MatchManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         m_finishPanel.SetActive(true);
+        m_selectButton.Select();
     }
 }

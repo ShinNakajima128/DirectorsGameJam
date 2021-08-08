@@ -19,6 +19,10 @@ public class TitleMenu : MonoBehaviour
     [SerializeField] GameObject m_audioPanel = default;
     [SerializeField] GameObject m_helpPanel = default;
     [SerializeField] GameObject m_quitPanel = default;
+    [SerializeField] Button m_mainButton = default;
+    [SerializeField] Button m_audioButton = default;
+    [SerializeField] Button m_helpButton = default;
+    [SerializeField] Button m_quitButton = default;
 
     [SerializeField] Image[] m_playGuideImage = default;
     [Header("デバッグ用")]
@@ -54,26 +58,30 @@ public class TitleMenu : MonoBehaviour
     {
         m_titleState = TitleState.Main;
         ChangeTitleState(m_titleState);
+        m_mainButton.Select();
     }
 
     public void OnAudioPanel()
     {
         m_titleState = TitleState.Audio;
         ChangeTitleState(m_titleState);
+        m_audioButton.Select();
     }
     public void OnHelpPanel()
     {
         m_titleState = TitleState.Help;
         ChangeTitleState(m_titleState);
+        m_helpButton.Select();
     }
     public void OnQuitPanel()
     {
         m_titleState = TitleState.Quit;
         ChangeTitleState(m_titleState);
+        m_quitButton.Select();
     }
     void ChangeTitleState(TitleState state)
     {
-        SoundManager.Instance.PlaySeByName("ボタン音03");
+        SoundManager.Instance.PlaySeByName("SF決定音1");
 
         switch (state)
         {
