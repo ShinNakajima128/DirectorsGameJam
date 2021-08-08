@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
-        m_masterSlider = GameObject.FindGameObjectWithTag("Master").GetComponent<Slider>();
+        m_masterSlider = GameObject.FindGameObjectWithTag("MASTER").GetComponent<Slider>();
         m_bgmSlider = GameObject.FindGameObjectWithTag("BGM").GetComponent<Slider>();
         m_seSlider = GameObject.FindGameObjectWithTag("SE").GetComponent<Slider>();
         //m_voiceSlider = GameObject.FindGameObjectWithTag("VOICE").GetComponent<Slider>();
