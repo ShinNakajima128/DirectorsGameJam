@@ -23,7 +23,8 @@ public class Bomb : MonoBehaviour
             }
         }
         Instantiate(efect, transform.position, efect.transform.rotation);
-        SoundManager.Instance.PlaySeByName("爆破・爆発12");
+        //SoundManager.Instance.PlaySeByName("爆破・爆発12");
+        SoundManager.Instance.PlaySeByName("インパクト系_HIT音（SE1）");
         this.gameObject.SetActive(false);
     }
 

@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Input.GetAxis("L_R_Trigger") > 0 && bulletTimer <= Timer)
         {
+            SoundManager.Instance.PlaySeByName("SF系射撃音(SE2) 1");
             shooter.shot();
             Timer = 0;
         }
