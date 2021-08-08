@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GamePlay()
     {
-        SoundManager.Instance.PlaySeByName("SF決定音1");
+        SoundManager.Instance.PlaySeByName("Cyber10-1");
         LoadSceneManager.Instance.LoadMainScene();
     }
 
@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GameQuit()
     {
-        SoundManager.Instance.PlaySeByName("SF決定音1");
+        SoundManager.Instance.PlaySeByName("Cyber10-1");
         LoadSceneManager.Instance.QuitGame();
     }
 

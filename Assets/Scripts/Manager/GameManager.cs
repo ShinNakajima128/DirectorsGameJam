@@ -100,6 +100,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void GameEnd(PlayerNum player)
     {
+        SoundManager.Instance.PlaySeByName("インパクト系_HIT音（SE1）");
         if (player == PlayerNum.player1)
         {
             m_player2Win = true;
