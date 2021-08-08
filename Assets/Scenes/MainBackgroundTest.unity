@@ -382,11 +382,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MatchManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4083769053046790534, guid: 073c2be7c276d3a4685913a866bccb17,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4083769053046790537, guid: 073c2be7c276d3a4685913a866bccb17,
         type: 3}
       propertyPath: m_LocalPosition.x
