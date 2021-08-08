@@ -100,6 +100,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void GameEnd(PlayerNum player)
     {
+        SoundManager.Instance.StopBgm();
+        SoundManager.Instance.PlayBgmByName("Sunset on the Bay (Electronic, Synthwave)");
         SoundManager.Instance.PlaySeByName("インパクト系_HIT音（SE1）");
         if (player == PlayerNum.player1)
         {

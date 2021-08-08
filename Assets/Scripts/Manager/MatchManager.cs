@@ -7,7 +7,7 @@ public class MatchManager : MonoBehaviour
 {
     [SerializeField] Text m_countText = default;
     [SerializeField] Text m_finishText = default;
-    [SerializeField] Button m_selectButton = default;
+    //[SerializeField] Button m_selectButton = default;
     [SerializeField] GameObject m_finishPanel = default;
 
     bool isFinished = true;
@@ -66,6 +66,8 @@ public class MatchManager : MonoBehaviour
         m_finishText.enabled = false;
         m_finishPanel.SetActive(false);
 
+        yield return new WaitForSeconds(0.1f);
+
         SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "5";
         yield return new WaitForSeconds(1.0f);
@@ -100,6 +102,6 @@ public class MatchManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         m_finishPanel.SetActive(true);
-        m_selectButton.Select();
+        //m_selectButton.Select();
     }
 }

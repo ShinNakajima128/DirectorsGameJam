@@ -93,11 +93,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
 
             if (SceneManager.GetActiveScene().name == m_titleScene)
             {
-                //PlayBgmByName("");
+                PlayBgmByName("Inner_Matrix");
             }
             else if (SceneManager.GetActiveScene().name == m_mainScene)
             {
-                PlayBgmByName("");
+                PlayBgmByName("Mecha_Action");
             }
             else if (SceneManager.GetActiveScene().name == m_resultScene)
             {
@@ -116,10 +116,10 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         switch (SceneManager.GetActiveScene().name)
         {
             case "Title":
-                //PlayBgmByName("Title");
+                PlayBgmByName("Inner_Matrix");
                 break;
             case "Main":
-                PlayBgmByName("");
+                PlayBgmByName("Mecha_Action");
                 break;
             case "Result":
                 PlayBgmByName("");
