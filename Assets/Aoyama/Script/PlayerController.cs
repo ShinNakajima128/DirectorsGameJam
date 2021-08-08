@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public enum PlayerNum
 {
@@ -14,13 +15,25 @@ public class PlayerController : MonoBehaviour
     Vector3 m_inputDirection = default;
     Vector3 m_rotate = default;
     [SerializeField] Shooter shooter;
-    [SerializeField] int life = 10;
-    [SerializeField] GameManager gameManager;
+    [SerializeField] int ariaX = 50;
+    [SerializeField] int ariaZ = 30;
+    [SerializeField] Transform playerEnemy;
+
+    [SerializeField] Slider hp;
+    [SerializeField] int maxLife = 10;
+    int life = 0;
+
     float Timer;
 
     void Start()
     {
+        life = maxLife;
+        hp.value = (float)life / maxLife;
+        ariaX /= 2;
+        ariaZ /= 2;
+        transform.position = SpownPotison();
         m_rb = GetComponent<Rigidbody>();
+        hp.transform.rotation = Quaternion.identity;
     }
 
     void Update()
@@ -59,6 +72,8 @@ public class PlayerController : MonoBehaviour
         transform.LookAt(targetPos, Vector3.up);
         
         m_rb.velocity = m_inputDirection * m_movePower;
+        hp.transform.position = transform.position - Vector3.forward;
+        hp.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 
 
@@ -72,7 +87,7 @@ public class PlayerController : MonoBehaviour
         m_rotate = new Vector3(hRight, 0, vRight).normalized;
 
         Timer += Time.deltaTime;
-        if (Input.GetAxis("L_R_Trigger2") > 0 && bulletTimer <= Timer)
+        if (Input.GetAxis("L_R_Trigger") > 0 && bulletTimer <= Timer)
         {
             Debug.Log("shot");
             shooter.shot();
@@ -89,7 +104,7 @@ public class PlayerController : MonoBehaviour
         m_rotate = new Vector3(hRight, 0, vRight).normalized;
 
         Timer += Time.deltaTime;
-        if (Input.GetAxis("L_R_Trigger") > 0 && bulletTimer <= Timer)
+        if (Input.GetAxis("L_R_Trigger2") > 0 && bulletTimer <= Timer)
         {
             Debug.Log("shot");
             shooter.shot();
@@ -99,25 +114,37 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Bullet" || collision.collider.tag == "Bomb")
+        if (other.gameObject.tag == "Bullet" || other.gameObject.tag == "Bomb")
         {
             life--;
+            hp.value = (float)life / maxLife;
             if (life <= 0)
             {
-                switch (number)
-                {
-                    case PlayerNum.player1:
-                        //gameManager.Player2Win = true;
-                        break;
-                    case PlayerNum.player2:
-                        //gameManager.Player1Win = true;
-                        break;
-                    default:
-                        break;
-                }
+                //GameManager.Instance.GameEnd(number);
+                Destroy(this.gameObject);
             }
         }
+    }
+
+
+    Vector3 SpownPotison()
+    {
+        bool cheak = true;
+        Vector3 point = Vector3.zero;
+        while (cheak)
+        {
+            int randomX = Random.Range(-ariaX + 1, ariaX);
+            int randomZ = Random.Range(-ariaZ + 1, ariaZ);
+            point = new Vector3(randomX, 0, randomZ);
+
+            float distance = Vector3.Distance(point, playerEnemy.position);
+            if (distance > 5)
+            {
+                cheak = false;
+            }
+        }
+        return point;
     }
 }
