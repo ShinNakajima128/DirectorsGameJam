@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         transform.LookAt(targetPos, Vector3.up);
 
         m_rb.velocity = m_inputDirection * m_movePower;
-        hp.transform.position = transform.position - Vector3.forward;
+        hp.transform.position = transform.position + Vector3.forward;
         hp.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 
