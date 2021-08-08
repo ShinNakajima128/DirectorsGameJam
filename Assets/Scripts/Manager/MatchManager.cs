@@ -65,27 +65,27 @@ public class MatchManager : MonoBehaviour
         m_finishText.enabled = false;
         m_finishPanel.SetActive(false);
 
-        SoundManager.Instance.PlaySeByName("カウントダウン");
+        SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "5";
         yield return new WaitForSeconds(1.0f);
 
-        SoundManager.Instance.PlaySeByName("カウントダウン");
+        SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "4";
         yield return new WaitForSeconds(1.0f);
 
-        SoundManager.Instance.PlaySeByName("カウントダウン");
+        SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "3";
         yield return new WaitForSeconds(1.0f);
 
-        SoundManager.Instance.PlaySeByName("カウントダウン");
+        SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "2";
         yield return new WaitForSeconds(1.0f);
 
-        SoundManager.Instance.PlaySeByName("カウントダウン");
+        SoundManager.Instance.PlaySeByName("ボタン音25");
         m_countText.text = "1";
         yield return new WaitForSeconds(1.0f);
 
-        SoundManager.Instance.PlaySeByName("インパクト系_HIT音（SE1）");
+        SoundManager.Instance.PlaySeByName("Cyber02-1");
         GameManager.Instance.InGame = true;
         isFinished = false;
         m_countText.text = "START!";

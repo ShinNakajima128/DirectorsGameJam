@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GamePlay()
     {
+        SoundManager.Instance.PlaySeByName("SF決定音1");
         LoadSceneManager.Instance.LoadMainScene();
     }
 
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GameQuit()
     {
+        SoundManager.Instance.PlaySeByName("SF決定音1");
         LoadSceneManager.Instance.QuitGame();
     }
 

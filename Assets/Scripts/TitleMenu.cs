@@ -73,6 +73,8 @@ public class TitleMenu : MonoBehaviour
     }
     void ChangeTitleState(TitleState state)
     {
+        SoundManager.Instance.PlaySeByName("ボタン音03");
+
         switch (state)
         {
             case TitleState.Start:
