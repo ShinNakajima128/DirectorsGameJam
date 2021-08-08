@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Input.GetAxis("L_R_Trigger") > 0 && bulletTimer <= Timer)
         {
-            SoundManager.Instance.PlaySeByName("SF系射撃音(SE2) 1");
+            SoundManager.Instance.PlaySeByName("SF系射撃音(SE2)");
             shooter.shot();
             Timer = 0;
         }
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Input.GetAxis("L_R_Trigger2") > 0 && bulletTimer <= Timer)
         {
-            SoundManager.Instance.PlaySeByName("SF系射撃音(SE2) 1");
+            SoundManager.Instance.PlaySeByName("SF系射撃音(SE2)");
             shooter.shot();
             Timer = 0;
         }
