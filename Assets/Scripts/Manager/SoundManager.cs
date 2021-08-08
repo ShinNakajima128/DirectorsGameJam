@@ -84,7 +84,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         if (m_debug)
         {
-            PlayBgmByName("");
+            //PlayBgmByName("");
         }
 
         if (Instance && !m_debug)

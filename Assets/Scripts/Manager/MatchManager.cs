@@ -40,7 +40,7 @@ public class MatchManager : MonoBehaviour
 
     public void Retry()
     {
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("ボタン音03");
 
         GameManager.Instance.InGame = false;
         GameManager.Instance.ResetFlag();
@@ -49,7 +49,7 @@ public class MatchManager : MonoBehaviour
 
     public void ReturnTitle()
     {
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("ボタン音03");
 
         GameManager.Instance.ResetFlag();
         LoadSceneManager.Instance.LoadTitleScene();

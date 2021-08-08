@@ -226,6 +226,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 559211683}
+    - target: {fileID: 4083769052847122939, guid: 073c2be7c276d3a4685913a866bccb17,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4083769053046790534, guid: 073c2be7c276d3a4685913a866bccb17,
         type: 3}
       propertyPath: m_Name
@@ -1079,6 +1084,21 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1160010890}
+    - target: {fileID: 7162315895267363141, guid: 82e6bc61fe37daf46b511107488a0136,
+        type: 3}
+      propertyPath: spownTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162315895267363141, guid: 82e6bc61fe37daf46b511107488a0136,
+        type: 3}
+      propertyPath: spownMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162315895267363141, guid: 82e6bc61fe37daf46b511107488a0136,
+        type: 3}
+      propertyPath: startBombs
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7162315895267363146, guid: 82e6bc61fe37daf46b511107488a0136,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1227,6 +1247,11 @@ PrefabInstance:
       propertyPath: playerEnemy
       value: 
       objectReference: {fileID: 868987965}
+    - target: {fileID: 3836576409632383123, guid: fdc8ca47605126d469803816ecf8c135,
+        type: 3}
+      propertyPath: maxLife
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4747204623029811721, guid: fdc8ca47605126d469803816ecf8c135,
         type: 3}
       propertyPath: m_Name
@@ -1678,6 +1703,11 @@ PrefabInstance:
       propertyPath: playerEnemy
       value: 
       objectReference: {fileID: 1160010890}
+    - target: {fileID: 3836576409632383123, guid: 0b5d7582380a8764ea4965ad22de24fb,
+        type: 3}
+      propertyPath: maxLife
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4747204623029811721, guid: 0b5d7582380a8764ea4965ad22de24fb,
         type: 3}
       propertyPath: m_Name
@@ -1777,6 +1807,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3709930083182865248, guid: c2cca54e9ddecf54094b01bab29d6dba,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19326ca31dfbbbd4e836126e9c92c3f2,
+        type: 3}
+    - target: {fileID: 3709930083182865248, guid: c2cca54e9ddecf54094b01bab29d6dba,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709930083182865248, guid: c2cca54e9ddecf54094b01bab29d6dba,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709930083182865248, guid: c2cca54e9ddecf54094b01bab29d6dba,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7176471
+      objectReference: {fileID: 0}
     - target: {fileID: 3709930083182865249, guid: c2cca54e9ddecf54094b01bab29d6dba,
         type: 3}
       propertyPath: m_Name

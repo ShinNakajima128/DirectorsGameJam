@@ -67,21 +67,21 @@ public class TitleMenu : MonoBehaviour
         SoundManager.Instance.PlaySeByName("SF決定音1");
         m_titleState = TitleState.Audio;
         ChangeTitleState(m_titleState);
-        m_audioButton.Select();
+        //m_audioButton.Select();
     }
     public void OnHelpPanel()
     {
         SoundManager.Instance.PlaySeByName("SF決定音1");
         m_titleState = TitleState.Help;
         ChangeTitleState(m_titleState);
-        m_helpButton.Select();
+        //m_helpButton.Select();
     }
     public void OnQuitPanel()
     {
         SoundManager.Instance.PlaySeByName("SF決定音1");
         m_titleState = TitleState.Quit;
         ChangeTitleState(m_titleState);
-        m_quitButton.Select();
+        //m_quitButton.Select();
     }
     void ChangeTitleState(TitleState state)
     {
