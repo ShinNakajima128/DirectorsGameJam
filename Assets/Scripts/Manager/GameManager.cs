@@ -76,32 +76,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
     }
 
-    //private void Update()
-    //{
-    //    if (InGame)
-    //    {
-    //        //if (player1.hp <= 0)
-    //        //{
-    //        //    m_player2Win = true;
-    //        //    InGame = false;
-    //        //}
-    //        //else if (player2.hp <= 0)
-    //        //{
-    //        //    m_player1Win = true;
-    //        //    InGame = false;
-    //        //}
-    //        //else
-    //        //{
-    //        //    m_draw = true;
-    //        //    InGame = false;
-    //        //}
-    //    }
-    //}
-
     public void GameEnd(PlayerNum player)
     {
         SoundManager.Instance.StopBgm();
-        SoundManager.Instance.PlayBgmByName("Sunset on the Bay (Electronic, Synthwave)");
+        SoundManager.Instance.PlayBgmByName("続報");
         SoundManager.Instance.PlaySeByName("インパクト系_HIT音（SE1）");
         if (player == PlayerNum.player1)
         {
