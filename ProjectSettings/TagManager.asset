@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Bomb
+  - MASTER
+  - BGM
+  - SE
   layers:
   - Default
   - TransparentFX
