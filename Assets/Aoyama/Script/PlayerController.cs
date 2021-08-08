@@ -7,6 +7,8 @@ public enum PlayerNum
 }
 public class PlayerController : MonoBehaviour
 {
+    bool move = false;
+
     [SerializeField] PlayerNum number;
     [SerializeField] float m_movePower = 3f;
     [SerializeField] float m_rotateSpeed = 1.5f;
@@ -67,13 +69,16 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //Vector3 targetPos = m_rotate;
-        Vector3 targetPos = m_rotate + transform.position;
-        transform.LookAt(targetPos, Vector3.up);
-        
-        m_rb.velocity = m_inputDirection * m_movePower;
-        hp.transform.position = transform.position - Vector3.forward;
-        hp.transform.rotation = Quaternion.Euler(90, 0, 0);
+        if (GameManager.Instance.InGame)
+        {
+            //Vector3 targetPos = m_rotate;
+            Vector3 targetPos = m_rotate + transform.position;
+            transform.LookAt(targetPos, Vector3.up);
+
+            m_rb.velocity = m_inputDirection * m_movePower;
+            hp.transform.position = transform.position - Vector3.forward;
+            hp.transform.rotation = Quaternion.Euler(90, 0, 0);
+        }
     }
 
 
@@ -89,7 +94,6 @@ public class PlayerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Input.GetAxis("L_R_Trigger") > 0 && bulletTimer <= Timer)
         {
-            Debug.Log("shot");
             shooter.shot();
             Timer = 0;
         }
@@ -106,7 +110,6 @@ public class PlayerController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Input.GetAxis("L_R_Trigger2") > 0 && bulletTimer <= Timer)
         {
-            Debug.Log("shot");
             shooter.shot();
             Timer = 0;
         }
@@ -122,7 +125,7 @@ public class PlayerController : MonoBehaviour
             hp.value = (float)life / maxLife;
             if (life <= 0)
             {
-                //GameManager.Instance.GameEnd(number);
+                GameManager.Instance.GameEnd(number);
                 Destroy(this.gameObject);
             }
         }

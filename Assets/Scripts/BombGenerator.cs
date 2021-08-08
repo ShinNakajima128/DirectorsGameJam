@@ -34,6 +34,11 @@ public class BombGenerator : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.Instance.InGame)
+        {
+            return;
+        }
+
         if (timer > spownTime && bombs.Count < maxBombs)
         {
             Vector3 point = SpownPotison();
