@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] Animator anim;
     [SerializeField] GameObject bullet;
+    [SerializeField] GameObject efect;
 
-
-    private void Start()
-    {
-
-    }
     public void Explosion()
     {
-        if (anim)
-        {
-            anim.Play("Explosion");
-        }
-
         for (int x = -2; x < 3; x++)
         {
             for (int z = -2; z < 3; z++)
@@ -32,8 +22,8 @@ public class Bomb : MonoBehaviour
                 Instantiate(bullet, bulletP, Quaternion.FromToRotation(Vector3.forward, vec));
             }
         }
-
-        Destroy(this.gameObject);
+        Instantiate(efect);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +34,8 @@ public class Bomb : MonoBehaviour
         }
         else if (other.CompareTag("Player"))
         {
-
+            Instantiate(efect);
+            gameObject.SetActive(false);
         }
     }
 }

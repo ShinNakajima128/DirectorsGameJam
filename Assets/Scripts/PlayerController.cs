@@ -69,16 +69,18 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameManager.Instance.InGame)
+        if (!GameManager.Instance.InGame)
         {
-            //Vector3 targetPos = m_rotate;
-            Vector3 targetPos = m_rotate + transform.position;
-            transform.LookAt(targetPos, Vector3.up);
-
-            m_rb.velocity = m_inputDirection * m_movePower;
-            hp.transform.position = transform.position - Vector3.forward;
-            hp.transform.rotation = Quaternion.Euler(90, 0, 0);
+            m_rb.velocity = Vector3.zero;
+            return;
         }
+        //Vector3 targetPos = m_rotate;
+        Vector3 targetPos = m_rotate + transform.position;
+        transform.LookAt(targetPos, Vector3.up);
+
+        m_rb.velocity = m_inputDirection * m_movePower;
+        hp.transform.position = transform.position - Vector3.forward;
+        hp.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 
 
@@ -143,7 +145,7 @@ public class PlayerController : MonoBehaviour
             point = new Vector3(randomX, 0, randomZ);
 
             float distance = Vector3.Distance(point, playerEnemy.position);
-            if (distance > 5)
+            if (distance > 10)
             {
                 cheak = false;
             }

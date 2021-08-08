@@ -55,6 +55,15 @@ public class BombGenerator : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+
+        for (int i = 0; i < bombs.Count; i++)
+        {
+            if (!bombs[i].activeSelf)
+            {
+                Destroy(bombs[i]);
+                bombs.RemoveAt(i);
+            }
+        }
     }
 
     IEnumerator Efect(Vector3 point)
