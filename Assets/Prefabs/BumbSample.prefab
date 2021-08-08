@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3871708215372932362}
   m_Layer: 0
   m_Name: BumbSample
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,4 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  bullet: {fileID: 436367630549896399, guid: 5337be297296661428a47cc27b57fed2, type: 3}
+  bullet: {fileID: 436367630549896399, guid: c8ca2021050f94240b1db4f6fc241a48, type: 3}

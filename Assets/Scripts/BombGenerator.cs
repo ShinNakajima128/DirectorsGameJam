@@ -8,34 +8,43 @@ public class BombGenerator : MonoBehaviour
     [SerializeField] Transform player2;
 
     [SerializeField] GameObject bomb;
+    [SerializeField] GameObject efect;
     [SerializeField] int maxBombs = 50;
     [SerializeField] int startBombs = 20;
 
     [SerializeField] int ariaX = 50;
-    [SerializeField] int ariaY = 50;
+    [SerializeField] int ariaZ = 50;
 
     List<GameObject> bombs = new List<GameObject>();
 
     float timer = 0;
-    [SerializeField] float spownTime = 0.5f;
-    public float SpownTime { get => spownTime; set {spownTime = value; } }
+    [SerializeField] float spownTime = 5f;
+    [SerializeField] float spownFast = 0.5f;
+    [SerializeField] float spownMin = 2f;
     void Start()
     {
+        ariaX /= 2;
+        ariaZ /= 2;
         for (int i = 0; i < startBombs; i++)
         {
-            BombsGenerate();
+            Vector3 point = SpownPotison();
+            BombsGenerate(point);
         }
     }
 
     private void FixedUpdate()
     {
-        if (timer > spownTime)
+        if (timer > spownTime && bombs.Count < maxBombs)
         {
-            if (bombs.Count < maxBombs)
+            Vector3 point = SpownPotison();
+
+            StartCoroutine(Efect(point));
+            if (spownTime > spownMin)
             {
-                BombsGenerate();
-                timer = 0;
+                spownTime -= spownFast;
             }
+            timer = 0;
+            
         }
         else
         {
@@ -43,10 +52,16 @@ public class BombGenerator : MonoBehaviour
         }
     }
 
-    void BombsGenerate()
+    IEnumerator Efect(Vector3 point)
     {
-        Vector3 point = SpownPotison();
-        // 同じ場所、playerの近くにスポーンしないようにする
+        GameObject efectObj = Instantiate(efect, point, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Destroy(efectObj);
+        bombs.Add(Instantiate(bomb, point, Quaternion.identity));
+    }
+
+    void BombsGenerate(Vector3 point)
+    {
         bombs.Add(Instantiate(bomb, point, Quaternion.identity));
     }
 
@@ -56,8 +71,8 @@ public class BombGenerator : MonoBehaviour
         Vector3 point = Vector3.zero;
         while (cheak)
         {
-            int randomX = Random.Range(0, ariaX);
-            int randomZ = Random.Range(0, ariaY);
+            int randomX = Random.Range(-ariaX + 1, ariaX);
+            int randomZ = Random.Range(-ariaZ + 1, ariaZ);
             point = new Vector3(randomX, 0, randomZ);
 
             float distance = Vector3.Distance(point, player1.position);

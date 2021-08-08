@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-        //Explosion();
+
     }
     public void Explosion()
     {
