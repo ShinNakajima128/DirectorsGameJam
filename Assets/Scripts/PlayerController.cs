@@ -130,6 +130,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet" || other.gameObject.tag == "Bomb")
         {
+            if (!GameManager.Instance.InGame)
+            {
+                return;
+            }
             life--;
             hp.value = (float)life / maxLife;
             if (life <= 0)
