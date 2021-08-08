@@ -85,8 +85,8 @@ public class BombGenerator : MonoBehaviour
         Vector3 point = Vector3.zero;
         while (cheak)
         {
-            int randomX = Random.Range(-ariaX + 1, ariaX);
-            int randomZ = Random.Range(-ariaZ + 1, ariaZ);
+            int randomX = Random.Range(-ariaX + 2, ariaX - 1);
+            int randomZ = Random.Range(-ariaZ + 2, ariaZ - 1);
             point = new Vector3(randomX, 0, randomZ);
 
             float distance = Vector3.Distance(point, player1.position);
@@ -99,7 +99,7 @@ public class BombGenerator : MonoBehaviour
             foreach (var item in bombs)
             {
                 distance = Vector3.Distance(point, item.transform.position);
-                if (distance < 1)
+                if (distance < 1.2f)
                 {
                     cheak = true;
                 }

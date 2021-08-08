@@ -22,8 +22,9 @@ public class Bomb : MonoBehaviour
                 Instantiate(bullet, bulletP, Quaternion.FromToRotation(Vector3.forward, vec));
             }
         }
-        Instantiate(efect);
-        gameObject.SetActive(false);
+        Instantiate(efect, transform.position, efect.transform.rotation);
+        SoundManager.Instance.PlaySeByName("爆破・爆発12");
+        this.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

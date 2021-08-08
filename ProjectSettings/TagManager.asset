@@ -9,6 +9,8 @@ TagManager:
   - MASTER
   - BGM
   - SE
+  - WallH
+  - WallV
   layers:
   - Default
   - TransparentFX

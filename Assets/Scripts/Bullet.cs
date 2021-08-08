@@ -26,4 +26,18 @@ public class Bullet : MonoBehaviour
             timer += Time.deltaTime;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "WallH")
+        {
+            Vector3 vel = rb.velocity;
+            rb.velocity = new Vector3(vel.x * -1, vel.y, vel.z);
+        }
+        else if (other.gameObject.tag == "WallV")
+        {
+            Vector3 vel = rb.velocity;
+            rb.velocity = new Vector3(vel.x, vel.y, vel.z * -1);
+        }
+    }
 }

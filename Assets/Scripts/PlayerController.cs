@@ -35,11 +35,16 @@ public class PlayerController : MonoBehaviour
         ariaZ /= 2;
         transform.position = SpownPotison();
         m_rb = GetComponent<Rigidbody>();
-        hp.transform.rotation = Quaternion.identity;
+        hp.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 
     void Update()
     {
+        if (!GameManager.Instance.InGame)
+        {
+            m_rb.velocity = Vector3.zero;
+            return;
+        }
         switch (number)
         {
             case PlayerNum.player1:
