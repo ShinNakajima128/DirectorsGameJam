@@ -51,6 +51,8 @@ public class LoadSceneManager : SingletonMonoBehaviour<LoadSceneManager>
 
     void Start()
     {
+        m_currentScene = SceneManager.GetActiveScene().name;@///Œ»İ‚ÌScene‚ğXV‚·‚é
+
         red = fadeImage.color.r;
         green = fadeImage.color.g;
         blue = fadeImage.color.b;

@@ -43,7 +43,7 @@ public class MatchManager : MonoBehaviour
 
         GameManager.Instance.InGame = false;
         GameManager.Instance.ResetFlag();
-        StartCoroutine(CountDown());
+        LoadSceneManager.Instance.Restart();
     }
 
     public void ReturnTitle()
@@ -69,23 +69,23 @@ public class MatchManager : MonoBehaviour
         m_countText.text = "5";
         yield return new WaitForSeconds(1.0f);
 
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("");
         m_countText.text = "4";
         yield return new WaitForSeconds(1.0f);
 
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("");
         m_countText.text = "3";
         yield return new WaitForSeconds(1.0f);
 
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("");
         m_countText.text = "2";
         yield return new WaitForSeconds(1.0f);
 
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("");
         m_countText.text = "1";
         yield return new WaitForSeconds(1.0f);
 
-        //SoundManager.Instance.PlaySeByName("");
+        SoundManager.Instance.PlaySeByName("");
         GameManager.Instance.InGame = true;
         isFinished = false;
         m_countText.text = "START!";
